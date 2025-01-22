@@ -29,35 +29,11 @@ memcachelite/
 │-- README.md
 ```
 
-### Usage
+### Clone and run tests
 
 ```bash
    git clone git@github.com:Nikhilnair48/memcachelite.git
    cd memcachelite
-   
+   mvn clean install
+   mvn test
 ```
-
-### CDK & AWS setup
-
-```bash
-    npm run create-tables # create the DynamoDB tables
-
-    cdk bootstrap
-    npm run synth
-    npm run deploy
-```
-
-## CI/CD Pipeline
-The project includes an automated CI/CD pipeline built using AWS CodePipeline. It:
-
-- Pulls source code from GitHub.
-- Executes tests using CodeBuild.
-- Deploys the application to AWS Lambda & updated any necessary resources.
-- Make sure the CodePipeline IAM role has access to:
-    - The GitHub repository (via CodeStar connection).
-    - S3 for artifact storage.
-    - Secrets Manager for fetching environment variables.
-
-## Walkthrough
-
-[Video walkthrough](https://drive.google.com/file/d/1LnxiIUPtanereRb_bwKUDavQDzTj0r93/view?usp=sharing)
